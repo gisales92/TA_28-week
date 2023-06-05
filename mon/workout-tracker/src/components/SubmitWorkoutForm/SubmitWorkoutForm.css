@@ -1,0 +1,10 @@
+.submit_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submit_form label {
+    display: flex;
+    gap: 15px
+}
