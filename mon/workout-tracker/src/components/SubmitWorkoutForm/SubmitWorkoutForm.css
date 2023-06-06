@@ -8,3 +8,8 @@
     display: flex;
     gap: 15px
 }
+
+.error {
+    color: red;
+    font-weight: bold;
+}
