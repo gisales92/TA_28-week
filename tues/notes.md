@@ -17,6 +17,8 @@ There are 3 main parts of Context in React.
 
 ```Javascript
 // /src/context/SomeContext.js
+import {createContext, useState} from "react";
+
 export const SomeContext = createContext();
 
 export default function SomeContextProvider(props) {
