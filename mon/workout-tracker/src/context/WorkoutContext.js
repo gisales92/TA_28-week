@@ -1,6 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const WorkoutContext = createContext();
+
+export const useWorkoutContext = () => useContext(WorkoutContext);
 
 export default function WorkoutContextProvider(props) {
     const [workouts, setWorkouts] = useState([
