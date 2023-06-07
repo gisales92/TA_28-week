@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import "./SubmitWorkoutForm.css"
 
 const SubmitWorkoutForm = () => {
-  const [workouts, setWorkouts] = useState([
-    { title: "Morning Walk", type: "Walk", duration: 20 },
-  ]);
   const [title, setTitle] = useState("");
   const [type, setType] = useState("");
   const [duration, setDuration] = useState(0);
@@ -14,7 +11,7 @@ const SubmitWorkoutForm = () => {
 const onFormSub = (e) => {
     e.preventDefault();
 
-    setWorkouts([...workouts, {title, type, duration}]);
+    // setWorkouts([...workouts, {title, type, duration}]);
 
     setTitle("");
     setType("");
@@ -57,18 +54,7 @@ useEffect(() => {
         {validationErrors.duration ? <p className="error">{validationErrors.duration}</p>: null}
         <button type="submit" disabled={disabled}>Submit Workout</button>
       </form>
-      <h2>Logged Workouts</h2>
-      <ul>
-        {workouts.map((workout) => {
-          return (
-            <li key={workout.title + workout.duration}>
-              <p>Title: {workout.title}</p>
-              <p>Type: {workout.type}</p>
-              <p>Duration: {workout.duration}</p>
-            </li>
-          );
-        })}
-      </ul>
+
     </>
   );
 };
