@@ -1,21 +1,26 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
+import { useHistory } from "react-router-dom";
+import { WorkoutContext } from "../../context/WorkoutContext";
 import "./SubmitWorkoutForm.css"
 
 const SubmitWorkoutForm = () => {
+  const {workouts, setWorkouts} = useContext(WorkoutContext)
   const [title, setTitle] = useState("");
   const [type, setType] = useState("");
   const [duration, setDuration] = useState(0);
   const [validationErrors, setValidationErrors] = useState({});
   const [disabled, setDisabled] = useState(true);
+  const history = useHistory();
 
 const onFormSub = (e) => {
     e.preventDefault();
 
-    // setWorkouts([...workouts, {title, type, duration}]);
+    setWorkouts([...workouts, {title, type, duration}]);
 
     setTitle("");
     setType("");
     setDuration(0);
+    history.push("/workouts")
 }
 
 useEffect(() => {
