@@ -4,8 +4,8 @@ import { WorkoutContext, useWorkoutContext } from "../../context/WorkoutContext"
 import "./SubmitWorkoutForm.css"
 
 const SubmitWorkoutForm = () => {
-  const {workouts, setWorkouts} = useContext(WorkoutContext)
-  //const {workouts, setWorkouts} = useWorkoutContext();
+  // const {workouts, setWorkouts} = useContext(WorkoutContext);
+  const {workouts, setWorkouts} = useWorkoutContext();
   const [title, setTitle] = useState("");
   const [type, setType] = useState("");
   const [duration, setDuration] = useState(0);

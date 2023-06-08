@@ -10,7 +10,7 @@ function Hygrometer() {
   useEffect(() => {
     if (humidity !== desiredHum) {
       const humTimeout = setTimeout(() => {
-        // Enjoy this nested ternary -- Since we're decrementing humidity by 2, I'm setting up a series of checks to see if we are only one away from the desired humidity so there is not a situation were we keep going one above and below the desired humidity
+        // Enjoy this nested ternary -- Since we're incrementing/decrementing humidity by 2, I'm setting up a series of checks to see if we are only one away from the desired humidity so there is not a situation were we keep going one above and below the desired humidity
         desiredHum > humidity
           ? desiredHum > humidity + 1
             ? setHumidity(humidity + 2)
