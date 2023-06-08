@@ -22,7 +22,7 @@ function Hygrometer() {
         return () => clearTimeout(humTimeout);
       }, 1000);
     }
-  }, [desiredHum, humidity]);
+  }, [desiredHum, humidity, setHumidity]);
 
   return (
     <section>

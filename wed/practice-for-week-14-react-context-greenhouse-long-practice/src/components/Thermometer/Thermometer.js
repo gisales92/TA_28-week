@@ -15,7 +15,7 @@ function Thermometer() {
         return () => clearTimeout(tempTimeout)
       }, 1000)
     }
-  }, [desiredTemp, temp])
+  }, [desiredTemp, temp, setTemp])
 
 
   return (
