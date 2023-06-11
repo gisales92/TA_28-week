@@ -1,9 +1,13 @@
+import { useFavFruitContext } from "../context/FavFruitContext";
+
 const SetFavoriteFruit = ({ fruits }) => {
+  const {favFruitId, setFavFruitId} = useFavFruitContext();
+
   return (
     <div className="set-fav-fruit">
       <h2>Select your Favorite Fruit</h2>
       <label>
-        <select
+        <select value={favFruitId} onChange={e => setFavFruitId(e.target.value)}
         >
           {fruits.map(fruit => (
             <option
